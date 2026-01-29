@@ -46,8 +46,8 @@ public class JwtService {
     //build token
     private String buildToken(Usuario usuario, Long expiration){
         return Jwts.builder()
-                .claims(Map.of("uid", "_" + usuario.getUserName()))
-                .subject(usuario.getCorreo())
+                .claims(Map.of("uid", "_" + usuario.getCorreo()))
+                .subject(usuario.getUserName())
                 .issuedAt(new Date(System.currentTimeMillis()))
                 .expiration(new Date(System.currentTimeMillis() + expiration))
                 .signWith(getSignKey())

@@ -41,7 +41,7 @@ public class Producto {
     @Column(nullable = false)
     private Boolean estado;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_categ")
     private Categoria categoria;
     

@@ -38,7 +38,7 @@ public class AppConfig {
         return new WebMvcConfigurer() {
             public void addCorsMapping(CorsRegistry registry){
                 registry.addMapping("/**")
-                        .allowedOrigins("http//localhost:3000")
+                        .allowedOrigins("http//localhost:3000") //falta vercel DEPLOY
                         .allowedMethods("POST", "PUT","GET", "DELETE", "PATCH")
                         .allowedHeaders("*")
                         .allowCredentials(true);
