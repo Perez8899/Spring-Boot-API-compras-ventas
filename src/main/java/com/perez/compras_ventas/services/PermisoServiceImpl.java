@@ -4,9 +4,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.perez.compras_ventas.dto.request.PermisoRequest;
 import org.springframework.stereotype.Service;
 
-import com.perez.compras_ventas.dto.request.PermisoRequest;
 import com.perez.compras_ventas.dto.response.PermisoResponse;
 import com.perez.compras_ventas.entity.Permiso;
 import com.perez.compras_ventas.repository.PermisoRepository;

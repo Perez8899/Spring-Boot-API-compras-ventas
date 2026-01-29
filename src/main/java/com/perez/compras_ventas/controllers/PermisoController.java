@@ -2,6 +2,7 @@ package com.perez.compras_ventas.controllers;
 
 import java.util.List;
 
+import com.perez.compras_ventas.dto.request.PermisoRequest;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.perez.compras_ventas.dto.request.PermisoRequest;
 import com.perez.compras_ventas.dto.response.PermisoResponse;
 import com.perez.compras_ventas.services.PermisoService;
 

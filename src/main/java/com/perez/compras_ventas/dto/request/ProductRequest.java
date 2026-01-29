@@ -1,11 +1,8 @@
 package com.perez.compras_ventas.dto.request;
 
 import com.perez.compras_ventas.entity.Producto;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 
@@ -20,6 +17,7 @@ public class ProductRequest {
     private String descripcion;
     private String marca;
     private BigDecimal precioVenta;
+    private MultipartFile file;
     private Integer categoriaId;
 
     public static Producto toEntity(ProductRequest productoRequest){

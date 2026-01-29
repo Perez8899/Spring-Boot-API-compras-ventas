@@ -29,7 +29,7 @@ public class Usuario {
     @Column(nullable = false, length = 100)
     private String apellido;
 
-    @Column(name = "fecha_nacimiento")
+
     private LocalDate fechaNacimiento;
 
     @Column(length = 12)
@@ -40,7 +40,7 @@ public class Usuario {
     @Column(nullable = false, unique = true, length = 20)
     private String dni;
 
-    @Column(name = "username", length = 20, unique = true)
+    @Column(length = 20, unique = true)
     private String userName;
 
     @Column(nullable = false, length = 100, unique = true)

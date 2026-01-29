@@ -32,9 +32,9 @@ public class ProductSpecification {
                             "%"+criteria.getNombre().toLowerCase()+"%"));
                 }
 
-                if(criteria.getDescription() != null && !criteria.getDescription().trim().isEmpty()){
+                if(criteria.getDescripcion() != null && !criteria.getDescripcion().trim().isEmpty()){
                     predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root.get("descripcion")),
-                            "%"+criteria.getDescription().toLowerCase()+"%"));
+                            "%"+criteria.getDescripcion().toLowerCase()+"%"));
                 }
 
                 if(criteria.getCodigoBarra() != null && !criteria.getCodigoBarra().trim().isEmpty()){

@@ -32,13 +32,13 @@ public class Nota {
     @Column(nullable = false)
     private LocalDateTime fecha;
 
-    @Column(name = "tipo_nota", length = 20)
+    @Column(length = 20)
     private String tipoNota;
 
      @Column(precision = 10, scale = 2)
     private BigDecimal descuento;
 
-    @Column(nullable = false, name = "total_calculado", precision = 10, scale = 2)
+    @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal totalCalculado;
 
     private String observacion;

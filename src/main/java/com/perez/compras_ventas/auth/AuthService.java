@@ -22,8 +22,7 @@ public class AuthService {
     private final UsuarioRepository usuarioRepository;
 
     private final AuthenticationManager authenticationManager;
-
-//--------------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------------
     public AuthResponse authentication(AuthRequest authRequest){
         try {
             authenticationManager.authenticate(

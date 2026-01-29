@@ -1,14 +1,11 @@
 package com.perez.compras_ventas.dto.response;
 
-import java.time.format.DateTimeFormatter;
-
 import com.perez.compras_ventas.entity.Usuario;
+import lombok.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -35,6 +32,8 @@ public class UsuarioResponse {
 
     private String userName;
 
+    private List<Integer> roles;
+
     public static UsuarioResponse fromEntity(Usuario usuario){ 
         return UsuarioResponse.builder()
         .idUsu(usuario.getIdUsu())   
@@ -46,6 +45,7 @@ public class UsuarioResponse {
         .dni(usuario.getDni())
         .correo(usuario.getCorreo())
         .userName(usuario.getUserName())
+        .roles(usuario.getRoles().stream().map(rol->rol.getIdRol()).collect(Collectors.toList()))
 
         .build();
     }

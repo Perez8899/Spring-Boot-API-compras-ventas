@@ -1,9 +1,9 @@
 package com.perez.compras_ventas.controllers;
 
+import com.perez.compras_ventas.dto.request.UsuarioRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.perez.compras_ventas.dto.request.UsuarioRequest;
 import com.perez.compras_ventas.dto.response.UsuarioResponse;
 import com.perez.compras_ventas.services.UsuarioService;
 

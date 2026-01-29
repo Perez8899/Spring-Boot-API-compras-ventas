@@ -29,12 +29,12 @@ public class Movimiento {
     @Column(nullable = false)
     private Integer cantidad;
 
-     @Column(nullable = false, name = "precio_unitario", precision = 10, scale = 2)
+     @Column(nullable = false,  precision = 10, scale = 2)
     private BigDecimal precioUnitario;
 
     private String observacion;
 
-    @Column(nullable = false, name = "tipo_movimiento", length = 20)
+    @Column(nullable = false, length = 20)
     private String tipoMovimiento;
 
 

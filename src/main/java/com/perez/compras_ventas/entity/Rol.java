@@ -21,7 +21,7 @@ public class Rol {  // 1
     @Column(nullable = false, unique = true, length = 50)
     private String nombre;
 
-    @Column(name = "descripcion", columnDefinition = "TEXT")
+    @Column()
     private String descripcion;
 
 
