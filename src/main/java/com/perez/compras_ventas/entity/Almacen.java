@@ -18,8 +18,7 @@ public class Almacen {
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id_alm")
-    private Integer idAlm;
+    private Integer id;
 
     @Column(length = 100, nullable = false)
     private String nombre;
@@ -30,7 +29,7 @@ public class Almacen {
     private String codigo;
 
     @ManyToOne
-    @Column(name = "id_usu")
+    @JoinColumn(name = "id_usu")
     private Sucursal sucursal;
 
 }

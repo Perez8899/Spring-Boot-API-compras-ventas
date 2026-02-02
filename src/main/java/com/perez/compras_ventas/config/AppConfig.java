@@ -6,6 +6,7 @@ import com.perez.compras_ventas.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -29,17 +30,17 @@ import java.util.stream.Stream;
 public class AppConfig {
 
     private final UsuarioRepository usuarioRepository;
-
     private final RolPermisoRepository rolPermisoRepository;
 
     //CORS
     @Bean
-    public WebMvcConfigurer corsConfigurer(){
+    public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
-            public void addCorsMapping(CorsRegistry registry){
+            @Override
+            public void addCorsMappings(@NonNull CorsRegistry registry){
                 registry.addMapping("/**")
-                        .allowedOrigins("http//localhost:3000") //falta vercel DEPLOY
-                        .allowedMethods("POST", "PUT","GET", "DELETE", "PATCH")
+                        .allowedOrigins("http://localhost:3000")  //FALTA DEPLOY
+                        .allowedMethods("POST", "PUT", "GET", "DELETE", "PATCH")
                         .allowedHeaders("*")
                         .allowCredentials(true);
             }
@@ -47,14 +48,14 @@ public class AppConfig {
     }
 
     @Bean
-    public UserDetailsService userDetailsService(){
-        return username ->{
+    public UserDetailsService userDetailsService() {
+        return username -> {
             Usuario usuario = usuarioRepository.findByUserName(username)
                     .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
             List<GrantedAuthority> grantedAuthorities = usuario.getRoles().stream()
                     .flatMap(rol -> {
                         Stream.Builder<GrantedAuthority> authBuilder = Stream.builder();
-                        authBuilder.add(new SimpleGrantedAuthority("ROLE_" + rol.getNombre()));
+                        authBuilder.add(new SimpleGrantedAuthority("ROLE_"+rol.getNombre()));
                         rolPermisoRepository.findByRol(rol).stream().map(permiso -> new SimpleGrantedAuthority(permiso.getPermiso().getNombre()))
                                 .forEach(authBuilder::add);
                         return authBuilder.build();
@@ -68,7 +69,7 @@ public class AppConfig {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 

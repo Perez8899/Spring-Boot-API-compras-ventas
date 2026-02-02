@@ -18,8 +18,8 @@ public class Producto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id_prod")
-    private Integer id;
+    @Column(name = "id_producto")
+    private Integer idProducto;
 
      @Column(length = 100, nullable = false)
     private String nombre;

@@ -17,7 +17,7 @@ public class AlmacenResponse {
 
     public static AlmacenResponse fromEntity(Almacen almacen){
         return AlmacenResponse.builder()
-                .id(almacen.getIdAlm())
+                .id(almacen.getId())
                 .nombre(almacen.getNombre())
                 .descripcion(almacen.getDescripcion())
                 .codigo(almacen.getCodigo())

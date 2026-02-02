@@ -64,7 +64,7 @@ public class NotaServiceImpl implements NotaService{
             }
             //UPDATE STOCK
             for(Movimiento movimiento : movimientosCreated){
-                AlmacenProducto almacenProductoRetrieved = almacenProductoRepository.findByAlmacen_IdAndProducto_Id(movimiento.getAlmacen().getIdAlm(), movimiento.getProducto().getId())
+                AlmacenProducto almacenProductoRetrieved = almacenProductoRepository.findByAlmacen_IdAndProducto_IdProducto(movimiento.getAlmacen().getId(), movimiento.getProducto().getIdProducto())
                         .orElseThrow(()->new RuntimeException("No se encontro el producto en el almacen"));
                 switch (movimiento.getTipoMovimiento()) {
                     case "COMPRA":
@@ -94,7 +94,7 @@ public class NotaServiceImpl implements NotaService{
         try{
             return  movimientoRequest.getTipoMovimiento().equals("VENTA")
                     && movimientoRequest.getCantidad() <= almacenProductoRepository
-                    .findByAlmacen_IdAndProducto_Id(movimientoRequest.getAlmacenId(), movimientoRequest.getProductoId())
+                    .findByAlmacen_IdAndProducto_IdProducto(movimientoRequest.getAlmacenId(), movimientoRequest.getProductoId())
                     .get().getStock();
         }
         catch (Exception e) {

@@ -2,8 +2,8 @@ package com.perez.compras_ventas.controllers;
 
 import com.perez.compras_ventas.common.dto.FileDownloadResponse;
 import com.perez.compras_ventas.services.FileService;
-import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

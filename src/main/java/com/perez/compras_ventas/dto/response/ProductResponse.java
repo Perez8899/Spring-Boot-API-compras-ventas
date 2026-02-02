@@ -22,7 +22,7 @@ public class ProductResponse {
 
     public static ProductResponse fromEntity(Producto producto){
         return ProductResponse.builder()
-                .id(producto.getId())
+                .id(producto.getIdProducto())
                 .nombre(producto.getNombre())
                 .descripcion(producto.getDescripcion())
                 .codigoBarra(producto.getCodigoBarra())

@@ -1,10 +1,7 @@
 package com.perez.compras_ventas.dto.request;
 
 import com.perez.compras_ventas.entity.Rol;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -12,8 +9,8 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class RolRequest {
-
     private String nombre;
     private String descripcion;
     private List<Integer> permisos;
@@ -24,5 +21,4 @@ public class RolRequest {
                 .nombre(rolRequest.getNombre())
                 .build();
     }
-
 }

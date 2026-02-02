@@ -6,5 +6,5 @@ import org.springframework.data.repository.ListCrudRepository;
 import java.util.List;
 
 public interface AlmacenRepository extends ListCrudRepository<Almacen, Integer> {
-    List<Almacen> findBySucursal_Id(Integer id);
+    List<Almacen> findBySucursal_IdSuc(Integer idSuc);
 }

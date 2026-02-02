@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -42,7 +43,7 @@ public class ProductController {
                 .nombreCategoria(nombreCategoria)
                 .build();
         PageableRequest<ProductoFilterCriteria> request = PageableRequest.<ProductoFilterCriteria>builder()
-                .criterials(criteria)
+                .criterials(Collections.singletonList(criteria))
                 .filterValue(filterValue)
                 .pageNumber(pageNumber)
                 .pageSize(pageSize)

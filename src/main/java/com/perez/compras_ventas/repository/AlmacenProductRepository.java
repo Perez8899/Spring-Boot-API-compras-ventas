@@ -9,5 +9,5 @@ import java.util.Optional;
 public interface AlmacenProductRepository extends ListCrudRepository<AlmacenProducto, Integer> {
 
     List<AlmacenProducto> findByAlmacen_Id(Integer almacenId);
-    Optional<AlmacenProducto> findByAlmacen_IdAndProducto_Id(Integer almacenId, Integer productoId);
+    Optional<AlmacenProducto> findByAlmacen_IdAndProducto_IdProducto(Integer almacenId, Integer productoId);
 }

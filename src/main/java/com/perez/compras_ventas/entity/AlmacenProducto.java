@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "almacen_producto")
 public class AlmacenProducto {
 
     @Id
@@ -24,11 +23,11 @@ public class AlmacenProducto {
     @Column(nullable=false)
     private Integer stock; 
     
-    @Column(name = "fecha_actualizacion")
+
     private LocalDateTime fechaActualizacion; 
     
     @ManyToOne
-    @JoinColumn(name = "id_alm")
+    @JoinColumn(name = "id")
     private Almacen almacen;
     
     @ManyToOne

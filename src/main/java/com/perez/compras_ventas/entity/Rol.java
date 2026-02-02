@@ -4,6 +4,7 @@ import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 public class Rol {  // 1
 
     @Id
@@ -25,6 +27,6 @@ public class Rol {  // 1
     private String descripcion;
 
 
-    @ManyToMany(mappedBy="rol", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy="roles", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Usuario> usuarios;
 }

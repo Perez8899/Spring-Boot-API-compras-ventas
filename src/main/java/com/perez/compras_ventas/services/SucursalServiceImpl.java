@@ -24,7 +24,7 @@ public class SucursalServiceImpl implements SucursalService {
 
     @Override
     public List<AlmacenResponse> findAlmacenesBySucursal(Integer sucursalId) {
-        return almacenRepository.findBySucursal_Id(sucursalId).stream()
+        return almacenRepository.findBySucursal_IdSuc(sucursalId).stream()
                 .map(AlmacenResponse::fromEntity).collect(Collectors.toList());
     }
 }
