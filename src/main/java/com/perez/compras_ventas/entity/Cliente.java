@@ -35,7 +35,7 @@ public class Cliente {
 
     private String direccion;
 
-    @Column(nullable = false,length = 20)
+    @Column(nullable = false,length = 100)
     private String correo;
 
      @Column(nullable = false)

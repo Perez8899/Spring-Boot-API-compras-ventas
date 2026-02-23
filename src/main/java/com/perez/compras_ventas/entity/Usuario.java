@@ -32,7 +32,7 @@ public class Usuario {
 
     private LocalDate fechaNacimiento;
 
-    @Column(length = 12)
+    @Column(length = 20)
     private String telefono;
 
     private String direccion;
@@ -46,7 +46,7 @@ public class Usuario {
     @Column(nullable = false, length = 100, unique = true)
     private String correo;
 
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 60)
     private String password;
 
     private String estado;

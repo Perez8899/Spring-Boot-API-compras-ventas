@@ -28,7 +28,7 @@ localhost:8089/compras-ventas/api/login
 ```bash
 se utilizara render para el deploy
 https://render.com/pricing
---teber cuenta de github
+--tener cuenta de github
 
 
 32 minutos inicia el deploy
